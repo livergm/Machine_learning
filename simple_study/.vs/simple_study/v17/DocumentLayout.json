@@ -3,6 +3,14 @@
   "WorkspaceRootPath": "C:\\Users\\34080\\Desktop\\Study\\maching_learning\\simple_study\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{5679B222-B562-4E25-96CB-07DFA646B73A}|simple_study.vcxproj|C:\\Users\\34080\\Desktop\\Study\\maching_learning\\simple_study\\logistic_regression.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{5679B222-B562-4E25-96CB-07DFA646B73A}|simple_study.vcxproj|solutionrelative:logistic_regression.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5679B222-B562-4E25-96CB-07DFA646B73A}|simple_study.vcxproj|C:\\Users\\34080\\Desktop\\Study\\maching_learning\\simple_study\\Regression.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{5679B222-B562-4E25-96CB-07DFA646B73A}|simple_study.vcxproj|solutionrelative:Regression.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{5679B222-B562-4E25-96CB-07DFA646B73A}|simple_study.vcxproj|C:\\Users\\34080\\Desktop\\Study\\maching_learning\\simple_study\\logistic_regression.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
       "RelativeMoniker": "D:0:0:{5679B222-B562-4E25-96CB-07DFA646B73A}|simple_study.vcxproj|solutionrelative:logistic_regression.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
@@ -13,10 +21,6 @@
     {
       "AbsoluteMoniker": "D:0:0:{5679B222-B562-4E25-96CB-07DFA646B73A}|simple_study.vcxproj|C:\\Users\\34080\\Desktop\\Study\\maching_learning\\simple_study\\Regression.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
       "RelativeMoniker": "D:0:0:{5679B222-B562-4E25-96CB-07DFA646B73A}|simple_study.vcxproj|solutionrelative:Regression.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{5679B222-B562-4E25-96CB-07DFA646B73A}|simple_study.vcxproj|C:\\Users\\34080\\Desktop\\Study\\maching_learning\\simple_study\\Regression.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{5679B222-B562-4E25-96CB-07DFA646B73A}|simple_study.vcxproj|solutionrelative:Regression.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.44.35207\\include\\vector||{3B902123-F8A7-4915-9F01-361F908088D0}|"
@@ -34,19 +38,32 @@
             {
               "$type": "Document",
               "DocumentIndex": 0,
+              "Title": "logistic_regression.cpp",
+              "DocumentMoniker": "C:\\Users\\34080\\Desktop\\Study\\maching_learning\\simple_study\\logistic_regression.cpp",
+              "RelativeDocumentMoniker": "logistic_regression.cpp",
+              "ToolTip": "C:\\Users\\34080\\Desktop\\Study\\maching_learning\\simple_study\\logistic_regression.cpp",
+              "RelativeToolTip": "logistic_regression.cpp",
+              "ViewState": "AgIAAEUAAAAAAAAAAAAAAFYAAAAGAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2026-01-06T10:23:20.683Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
               "Title": "logistic_regression.h",
               "DocumentMoniker": "C:\\Users\\34080\\Desktop\\Study\\maching_learning\\simple_study\\logistic_regression.h",
               "RelativeDocumentMoniker": "logistic_regression.h",
               "ToolTip": "C:\\Users\\34080\\Desktop\\Study\\maching_learning\\simple_study\\logistic_regression.h",
               "RelativeToolTip": "logistic_regression.h",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAUAAAAZAAAAAAAAAA==",
+              "ViewState": "AgIAAAYAAAAAAAAAAAAAABYAAAAaAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
               "WhenOpened": "2026-01-06T09:59:08.724Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 5,
               "Title": "vector",
               "DocumentMoniker": "C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.44.35207\\include\\vector",
               "RelativeDocumentMoniker": "..\\..\\..\\..\\..\\..\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.44.35207\\include\\vector",
@@ -54,44 +71,43 @@
               "RelativeToolTip": "..\\..\\..\\..\\..\\..\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.44.35207\\include\\vector",
               "ViewState": "AgIAAIcHAAAAAAAAAAAgwJMHAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
-              "WhenOpened": "2026-01-05T10:16:57.294Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-01-05T10:16:57.294Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 4,
               "Title": "Regression.h",
               "DocumentMoniker": "C:\\Users\\34080\\Desktop\\Study\\maching_learning\\simple_study\\Regression.h",
               "RelativeDocumentMoniker": "Regression.h",
               "ToolTip": "C:\\Users\\34080\\Desktop\\Study\\maching_learning\\simple_study\\Regression.h",
               "RelativeToolTip": "Regression.h",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAADMAAAACAAAAAAAAAA==",
+              "ViewState": "AgIAABIAAAAAAAAAAAAAAB4AAAAcAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
               "WhenOpened": "2026-01-04T14:49:31.318Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 1,
               "Title": "Regression.cpp",
               "DocumentMoniker": "C:\\Users\\34080\\Desktop\\Study\\maching_learning\\simple_study\\Regression.cpp",
               "RelativeDocumentMoniker": "Regression.cpp",
               "ToolTip": "C:\\Users\\34080\\Desktop\\Study\\maching_learning\\simple_study\\Regression.cpp",
               "RelativeToolTip": "Regression.cpp",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAEAAAATAAAAAAAAAA==",
+              "ViewState": "AgIAAMMAAAAAAAAAAAAAANEAAAA2AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
               "WhenOpened": "2026-01-04T14:49:23.778Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 3,
               "Title": "simple_study.cpp",
               "DocumentMoniker": "C:\\Users\\34080\\Desktop\\Study\\maching_learning\\simple_study\\simple_study.cpp",
               "RelativeDocumentMoniker": "simple_study.cpp",
               "ToolTip": "C:\\Users\\34080\\Desktop\\Study\\maching_learning\\simple_study\\simple_study.cpp",
               "RelativeToolTip": "simple_study.cpp",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAACAAAAAOAAAAAAAAAA==",
+              "ViewState": "AgIAABsAAAAAAAAAAAAAAB8AAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
               "WhenOpened": "2026-01-04T14:48:37.953Z",
               "EditorCaption": ""

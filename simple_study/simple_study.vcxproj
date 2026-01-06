@@ -123,6 +123,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="logistic_regression.cpp" />
     <ClCompile Include="Regression.cpp" />
     <ClCompile Include="simple_study.cpp" />
   </ItemGroup>

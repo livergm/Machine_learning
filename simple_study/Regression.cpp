@@ -3,7 +3,7 @@
 #include <vector>
 #include <random>
 
-void methods::createsamples(int feature_num, std::vector<std::vector<double>>& outputsamples,int samplenum,int randnum)
+void Regression::createsamples(int feature_num, std::vector<std::vector<double>>& outputsamples,int samplenum,int randnum)
 {
 	outputsamples.resize(samplenum, std::vector<double>(feature_num));//提前分配空间
 	//根据所给低阶特征，生成1000份数据
@@ -21,7 +21,7 @@ void methods::createsamples(int feature_num, std::vector<std::vector<double>>& o
 		}
 	}//随机特征值生成
 }
-void methods::createtags(int degree, std::vector<std::vector<double>>& inputsamples, const std::vector<double>& designed_weights, std::vector<double>& outputtags,int randnum)
+void Regression::createtags(int degree, std::vector<std::vector<double>>& inputsamples, const std::vector<double>& designed_weights, std::vector<double>& outputtags,int randnum)
 {
 	int size = inputsamples[0].size();
 	for (auto& row : inputsamples) {
@@ -50,7 +50,7 @@ void methods::createtags(int degree, std::vector<std::vector<double>>& inputsamp
 		outputtags[i] = result;
 	}
 }
-void methods::dataprocess(std::vector<std::vector<double>>& inputsamples, std::vector<double>& inputTag, reprocess_msg& msg,int degree,bool fill)
+void Regression::dataprocess(std::vector<std::vector<double>>& inputsamples, std::vector<double>& inputTag, reprocess_msg& msg,int degree,bool fill)
 {
 	//是否进行高次项填充
 	if (fill) {
@@ -94,7 +94,7 @@ void methods::dataprocess(std::vector<std::vector<double>>& inputsamples, std::v
 
 
 }
-void methods::normalization_min_max(std::vector<std::vector<double>>& inputsample, std::vector<double>& inputTag, reprocess_msg& msg)
+void Regression::normalization_min_max(std::vector<std::vector<double>>& inputsample, std::vector<double>& inputTag, reprocess_msg& msg)
 {
 	int n_features = inputsample[0].size();
 	msg.msg.push_back({ 1,1 });
@@ -126,7 +126,7 @@ void methods::normalization_min_max(std::vector<std::vector<double>>& inputsampl
 	}
 	msg.msg.push_back(min_max);
 }
-void methods::normalization_z_score(std::vector<std::vector<double>>& inputsample,std::vector<double>& inputTag, reprocess_msg& msg) {
+void Regression::normalization_z_score(std::vector<std::vector<double>>& inputsample,std::vector<double>& inputTag, reprocess_msg& msg) {
 	int n_features = inputsample[0].size();
 	msg.msg.clear();
 	msg.msg.push_back({ 1,0 });//这里x0的偏置项（全1）的均值为1，方差为0
@@ -171,12 +171,18 @@ void methods::normalization_z_score(std::vector<std::vector<double>>& inputsampl
 	}
 	msg.msg.push_back({ mean_tag,stddev_tag });
 }
-void methods::Train_Regression(const std::vector<std::vector<double>>& inputsample, const std::vector<double>& inputTag,  parameters& hms) {
+void Regression::Train_Regression(const std::vector<std::vector<double>>& inputsample, const std::vector<double>& inputTag,  parameters& hms) {
 
 	int rows = inputsample.size();
 	int cols = inputsample[0].size();
 	//第一列全是1
-	std::vector<double >outputweight(cols, 0.0);//初始化特征权重
+	std::vector<double >outputweight;
+	if (hms.weight.empty()) {
+		outputweight.assign(cols, 0.0);
+	}//初始化特征权重
+	else {
+		outputweight = hms.weight;
+	}//便于继承上次训练成果
 
 	//每循环一次，就更新一次特征权重,并重置梯度
 	for (int epoch = 1; epoch <= hms.epochs; ++epoch) {
@@ -205,7 +211,7 @@ void methods::Train_Regression(const std::vector<std::vector<double>>& inputsamp
 		for (int i = 0; i < cols; ++i) {
 			if (!i) { outputweight[i] -= (grad[i]* lr); }
 			else {
-				double total_grad = grad[i] + 2 * hms.Ridge_alpha_L2 * outputweight[i] + hms.Lasso_alpha_L1 * (outputweight[i] > 0 ? 1.0 : ((outputweight[i] < 0 ? -1 : 0)));
+				double total_grad = grad[i] + 2 * hms.Ridge_alpha_L2 * outputweight[i]/rows + hms.Lasso_alpha_L1 * (outputweight[i] > 0 ? 1.0 : ((outputweight[i] < 0 ? -1 : 0)))/rows;
 				outputweight[i] -= (total_grad * lr);
 			}
 		}//启用了弹性网正则化
@@ -214,7 +220,7 @@ void methods::Train_Regression(const std::vector<std::vector<double>>& inputsamp
 	hms.mrmr = evaluate(inputsample, inputTag, outputweight);
 	hms.weight = outputweight;
 }
-methods::Metrics methods::evaluate(const std::vector<std::vector<double>>& X,const std::vector<double>& y,const std::vector<double>& weights)
+Regression::Metrics Regression::evaluate(const std::vector<std::vector<double>>& X,const std::vector<double>& y,const std::vector<double>& weights)
 {
 	int n = X.size();
 	if (n == 0) return { 0, 0, 0, 0 };
@@ -248,7 +254,7 @@ methods::Metrics methods::evaluate(const std::vector<std::vector<double>>& X,con
 	Metrics m{ mse, rmse, mae, r2 };
 	return m;
 }
-void methods::Validate_Regression(const std::vector<std::vector<double>>& inputsample,const std::vector<double>& inputTag,const parameters& pm,const reprocess_msg& msg)
+void Regression::Validate_Regression(const std::vector<std::vector<double>>& inputsample,const std::vector<double>& inputTag,const parameters& pm,const reprocess_msg& msg)
 {
 	std::cout << "若RMSE与MAE差距过大，说明有异常数据" << std::endl;
 	std::cout << "均方根误差为：" << pm.mrmr.rmse << std::endl;
